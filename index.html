@@ -295,16 +295,19 @@
         if (loaded == 50) $('#cubes div:nth-child(2)').fadeIn(100)
         if (loaded == 75) $('#cubes div:nth-child(3)').fadeIn(100)
         if (loaded == 100) {
-          $('body').css('background', '')
-          $('#loader').hide()
-          $('footer').hide()
-          $('body').css('background-color', 'white')
-
-          $('#box').show()
           $('#lemon').fadeIn(100)
           $('#straw').fadeIn(300)
           loaded = 0
           stopLoading()
+
+          setTimeout(() => {
+            $('body').css('background', '')
+            $('#loader').hide()
+            $('footer').hide()
+            $('body').css('background-color', 'white')
+          }, 1000)
+
+          $('#box').show()
           // setTimeout(startLoading, 1000)
         } else loaded++
       }
